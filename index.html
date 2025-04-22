@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Angka Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tebak Angka 🎯</h1>
+        <p>Masukkan nama & menebak angka antara 1 sampai 100 </p>
+
+        
+        <input type="text" id="playerName" placeholder="Masukkan nama pemain">
+        <button id="startBtn">Mulai</button>
+
+        <div id="gameArea" style="display: none;">
+            <input type="number" id="guess" placeholder="Masukkan tebakan Anda">
+            <button id="submit">Kirim Tebakkan</button>
+            <p id="result"></p>
+        </div>
+
+        <button id="nextPlayer" style="display: none;">➡️ Pemain Berikutnya</button>
+
+        <h2>🏆 Leaderboard</h2>
+        <ul id="leaderboard"></ul>
+
+        <!-- Reset leaderboard pindah ke bawah -->
+        <button id="resetLeaderboard">🔁 Reset Leaderboard</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

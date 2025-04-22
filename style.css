@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#nextPlayer {
+    background-color: #1976d2;
+}
+
+#nextPlayer:hover {
+    background-color: #1565c0;
+}
+
+#resetLeaderboard {
+    background-color: #f44336;
+    margin-top: 20px;
+}
+
+#resetLeaderboard:hover {
+    background-color: #d32f2f;
+}
+
+/* Animasi jika benar */
+.correct {
+    animation: bounceScale 1s ease-in-out;
+    font-weight: bold;
+    color: #388e3c;
+}
+
+@keyframes bounceScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(3deg); }
+    100% { transform: scale(1); }
+}
+
+/* Leaderboard style */
+#leaderboard {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#leaderboard li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Ranking color */
+#leaderboard li.first {
+    background-color: #dcedc8;
+}
+
+#leaderboard li.last {
+    background-color: #ffcdd2;
+}
