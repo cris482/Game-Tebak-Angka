@@ -50,8 +50,10 @@ function submitGuess() {
     }
     attempts++;
 
+    const difference = Math.abs(guess - randomNumber);
+
     if (guess === randomNumber) {
-        const timeTaken = Math.floor((Date.now() - startTime) / 1000); // hitung waktu
+        const timeTaken = Math.floor((Date.now() - startTime) / 1000);
 
         result.textContent = `🎉 Benar! ${playerName} menebak dalam ${attempts} percobaan.`;
         result.classList.add('correct');
@@ -63,19 +65,30 @@ function submitGuess() {
             time: timeTaken
         });
 
-        leaderboard.sort((a, b) => a.score - b.score || a.time - b.time); // urutkan
+        leaderboard.sort((a, b) => a.score - b.score || a.time - b.time);
         updateLeaderboard();
 
         setTimeout(() => result.classList.remove('correct'), 1000);
 
         gameArea.style.display = 'none';
         nextPlayerBtn.style.display = 'inline-block';
-    } else if (guess < randomNumber) {
-        result.textContent = "Terlalu rendah! ⬇️";
+        
     } else {
-        result.textContent = "Terlalu tinggi! ⬆️";
+        let feedback = "";
+
+        if (difference <= 10) {
+            feedback = "🔥 Mendekati!";
+        } else if (guess < randomNumber) {
+            feedback = "⬇️ Terlalu rendah!";
+        } else {
+            feedback = "⬆️ Terlalu tinggi!";
+        }
+
+        result.textContent = feedback;
     }
 }
+
+
 
 // Update leaderboard
 function updateLeaderboard() {
@@ -106,3 +119,5 @@ resetLeaderboardBtn.addEventListener('click', function () {
         updateLeaderboard();
     }
 });
+
+
